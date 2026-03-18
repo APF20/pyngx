@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+    
+      "login": "APF20",
+      "name": "APF20",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/74583612?v=4",
+      "profile": "https://github.com/APF20",
+      "contributions": [
+        "code",
+        "doc"
+
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "pygnx",
+  "projectOwner": "APF20",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
