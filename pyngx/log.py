@@ -1,3 +1,11 @@
+"""
+logging handler with rotating file sets and gzip compression
+
+:copyright: (c) 2024 APF20
+
+:license: MIT License
+"""
+
 import logging as Logging
 from logging.handlers import RotatingFileHandler
 import os
