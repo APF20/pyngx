@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.5.1] - 2026-03-18
 
+### Changelog Update (2026-03-20)
+
+- Updated repo to use pyproject file rather than setup.* files.
+
 ### Added
 
 - The `pyngx` module.
