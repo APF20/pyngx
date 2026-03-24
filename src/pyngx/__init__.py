@@ -27,7 +27,7 @@ from .log import Logger
 from .ratelimit import RateLimiter
 from .constants import REST_URL, WS_LISTEN_KEY_URL
 
-# VERSION = '3.6.0'
+# VERSION = '3.7.0'
 
 
 class Exchange:
