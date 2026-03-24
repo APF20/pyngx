@@ -3,9 +3,9 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![Build Status](https://img.shields.io/pypi/pyversions/pyngx)](https://www.python.org/downloads/)
-[![Build Status](https://img.shields.io/pypi/v/pyngx)](https://pypi.org/project/pyngx/)
-[![Build Status](https://travis-ci.org/apf20/pyngx.svg?branch=master)](https://travis-ci.org/apf20/pyngx)
+[![Python versions](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11-blue)](https://www.python.org/downloads/)
+[![Build Status](https://img.shields.io/github/v/release/APF20/pyngx)](https://github.com/APF20/pyngx/releases)
+[![CI](https://github.com/APF20/pyngx/actions/workflows/ci.yml/badge.svg)](https://github.com/APF20/pyngx/actions/workflows/ci.yml)
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
 
 Python3 Asyncronous, Rate-Limit Aware, API connector for BingX's HTTP and Websockets APIs.
@@ -48,8 +48,15 @@ Feel free to fork this repository, issue reports for any bugs and add pull reque
 improvements and updates to BingX API changes.
 
 ## Installation
-`pyngx` requires Python 3.8 or higher. The module can be installed manually. Pip
+`pyngx` requires Python 3.9 or higher. The module can be installed manually. Pypi
 installation support will be considered.
+```
+# Production installation
+pip install .
+
+# Developer/Editable installation
+pip install -e .
+```
 
 ## Usage
 You can retrieve the HTTP and WebSocket classes like so:
