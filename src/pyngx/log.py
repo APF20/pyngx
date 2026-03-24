@@ -4,6 +4,8 @@ logging handler with rotating file sets and gzip compression
 :copyright: (c) 2024 APF20
 
 :license: MIT License
+
+:version: 2.1.0
 """
 
 import logging as Logging
@@ -60,8 +62,7 @@ class GzipRotatingFileHandler(RotatingFileHandler):
 
 class Logger:
 
-    def __init__(self):
-        self.loggers = {}
+    _loggers = {}
 
     def setup_custom_logger(self, name, streamLevel=Logging.WARNING, fileLevel=Logging.INFO,
                             fileName='default.log', maxBytes=100000000, backupCount=10,
@@ -97,12 +98,16 @@ class Logger:
 
         """
 
-        if self.loggers.get(name):
-            logger = self.loggers[name]
+        if name in Logger._loggers:
+            logger = Logger._loggers[name]
 
             # remove previous handlers
-            for h in logger.handlers.copy():
+            for h in logger.handlers[:]:
                 if isinstance(h, (GzipRotatingFileHandler, RotatingFileHandler, Logging.StreamHandler)):
+                    try:
+                        h.close()
+                    except (OSError, ValueError):
+                        pass
                     logger.removeHandler(h)
 
         else:
@@ -118,7 +123,7 @@ class Logger:
             logger.setLevel('DEBUG')
 
             # assign new logger obj to loggers
-            self.loggers[name] = logger
+            Logger._loggers[name] = logger
 
         # create rotating file handler
         fh = GzipRotatingFileHandler(fileName, 'a', maxBytes=maxBytes, backupCount=backupCount, compressLevel=compressLevel)
